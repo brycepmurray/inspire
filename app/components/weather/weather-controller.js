@@ -5,7 +5,7 @@ function WeatherController() {
     function getWeather() {
         weatherService.getWeather(weather => {
             console.log(weather);
-            let farenheith = Math.floor(((weather.main.temp - 273) * 1.8) + 32)
+            let farenheit = Math.floor(((weather.main.temp - 273) * 1.8) + 32)
             let tempLow = Math.floor(((weather.main.temp_min - 273) * 1.8) + 32)
             let tempHigh = Math.floor(((weather.main.temp_max - 273) * 1.8) + 32)
                 //What can you do with this weather object?
