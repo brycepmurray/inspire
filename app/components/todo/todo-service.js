@@ -1,7 +1,7 @@
 function TodoService() {
     // A local copy of your todos
     var todoList = []
-    var baseUrl = 'https://inspire-server.herokuapp.com/api/todos/Bryce_Murray'
+    var baseUrl = 'https://inspire-server.herokuapp.com/api/todos/BryceMurray'
 
     function logError(err) {
         console.error('UMM SOMETHING BROKEY: ', err)
@@ -18,12 +18,12 @@ function TodoService() {
             .fail(logError)
     }
 
-    this.addTodo = todo => {
+    this.addTodo = (todo, getTodo) => {
         // WHAT IS THIS FOR???
         $.post(baseUrl, todo)
             .then(res => { // <-- WHAT DO YOU DO AFTER CREATING A NEW TODO?
-                todoList = res;
-                draw(res)
+                console.log(res)
+                getTodo()
             })
             .fail(logError)
     }
@@ -31,7 +31,7 @@ function TodoService() {
     this.toggleTodoStatus = todoId => {
         // MAKE SURE WE THINK THIS ONE THROUGH
         //STEP 1: Find the todo by its index **HINT** todoList
-        var indes = todoList.indexOf(todo);
+        var index = todoList.indexOf(todo);
         //STEP 2: Change the completed flag to the opposite of what is is **HINT** todo.completed = !todo.completed
 
         //STEP 3: Here is that weird Ajax request because $.put doesn't exist
