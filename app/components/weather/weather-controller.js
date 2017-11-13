@@ -13,10 +13,8 @@ function WeatherController() {
                 <div class = "inner-card col-md-4">
                 <h2>${farenheit}°</h2>
                 <p>${weather.name}<p/>
-                </div>
-                <div class = "inner-card col-md-4">
                 <img class="weather-icon" src="http://openweathermap.org/img/w/${weather.weather[0].icon}.png"></img>
-                <p> low: ${ltempLow}°</p> <p> high: ${tempHigh}°</p>
+                <p> low: ${tempLow}°</p> <p> high: ${tempHigh}°</p>
                 </div>
             `
         })

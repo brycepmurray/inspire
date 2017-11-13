@@ -4,7 +4,7 @@ function TodoService() {
     var baseUrl = 'https://inspire-server.herokuapp.com/api/todos/YOURNAMEHERE'
 
     function logError(err) {
-        console.error('UMM SOMETHING BROKE: ', err)
+        console.error('UMM SOMETHING BROKEY: ', err)
             //CAN YOU NOTIFY THE USER IF SOMETHING BREAKS? 
             //do this without breaking the controller/service responsibilities
     }

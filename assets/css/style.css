@@ -1,0 +1,10 @@
+body {
+    background-size: cover;
+    color: white;
+    text-shadow: 3px 3px 4px black;
+}
+
+.weather {
+    display: flex;
+    justify-content: right;
+}
