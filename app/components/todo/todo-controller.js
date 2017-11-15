@@ -15,12 +15,13 @@ function TodoController() {
     }
 
     function draw(todos) {
+
         //WHAT IS MY PURPOSE?
         //BUILD YOUR TODO TEMPLATE HERE
         var template = ''
             //DONT FORGET TO LOOP
-        for (var i = 0; i < array.length; i++) {
-            var myTodo = todoList[i]
+        for (var i = 0; i < todos.length; i++) {
+            var myTodo = todos[i]
             template += `
 			<div class="checkbox">
 			<label><input type="checkbox" value="">${myTodo.description}</label>

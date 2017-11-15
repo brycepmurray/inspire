@@ -23,10 +23,15 @@
             </div>
         </div>
         <div class="row">
-            <form onsubmit=""></form>
-            <div id="todo">
+            <form id="todoForm" class="form hidden" onsubmit="app.controllers.todoController.addTodoFromForm(event)">
+                <div class="form-group">
+                    <label for="toDo">To Do:</label>
+                    <input type="text" name="todo" class="form-control" placeholder="TO DO?" required>
+                </div>
 
-            </div>
+                <div id="todo">
+
+                </div>
         </div>
     </div>
 

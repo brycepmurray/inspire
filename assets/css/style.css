@@ -8,3 +8,16 @@ body {
     display: flex;
     justify-content: right;
 }
+
+.row {
+    display: flex;
+}
+
+.col-sm-6 {
+    display: flex;
+    justify-content: space-between;
+}
+
+.form {
+    justify-content: space-between;
+}
