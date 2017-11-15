@@ -36,10 +36,11 @@ function TodoController() {
             // TAKE THE INFORMATION FORM THE FORM
         var form = e.target
         var todo = {
-            description: form.todo.value
+                description: form.todo.value,
                 // DONT FORGET TO BUILD YOUR TODO OBJECT
-        }
-        todoFormElem.classList.toggle('hidden', true)
+                completed: false
+            }
+            //todoFormElem.classList.toggle('hidden', true)
             //PASSES THE NEW TODO TO YOUR SERVICE
             //DON'T FORGET TO REDRAW THE SCREEN WITH THE NEW TODO
             //YOU SHOULDN'T NEED TO CHANGE THIS
@@ -51,11 +52,11 @@ function TodoController() {
 
     this.toggleTodoStatus = todo => {
         // asks the service to edit the todo status
-        todoService.toggleTodoStatus(todoId, getTodos)
+        todoService.toggleTodoStatus(todo, getTodos)
             // YEP THATS IT FOR ME
     }
 
-    this.removeTodo = todoId => {
+    this.removeTodo = todo => {
         // ask the service to run the remove todo with this id
         todoService.removeTodo(todo, getTodos)
             // ^^^^ THIS LINE OF CODE PROBABLY LOOKS VERY SIMILAR TO THE toggleTodoStatus

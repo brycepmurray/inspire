@@ -21,20 +21,18 @@ function TodoService() {
     this.addTodo = (todo, getTodo) => {
         // WHAT IS THIS FOR???
         $.post(baseUrl, todo)
-            .then(res => { // <-- WHAT DO YOU DO AFTER CREATING A NEW TODO?
-                console.log(res)
-                getTodo()
-            })
-            .fail(logError)
+            .then(getTodos) // <-- WHAT DO YOU DO AFTER CREATING A NEW TODO?
+
+        .fail(logError)
     }
 
-    this.toggleTodoStatus = todoId => {
+    this.toggleTodoStatus = (todoIndex, getTodos) => {
         // MAKE SURE WE THINK THIS ONE THROUGH
         //STEP 1: Find the todo by its index **HINT** todoList
-        var index = todoList.indexOf(todo);
-        //STEP 2: Change the completed flag to the opposite of what is is **HINT** todo.completed = !todo.completed
-
-        //STEP 3: Here is that weird Ajax request because $.put doesn't exist
+        var todo = todoList[todoIndex]
+            //STEP 2: Change the completed flag to the opposite of what is is **HINT** todo.completed = !todo.completed
+        todo.completed = !todo.completed
+            //STEP 3: Here is that weird Ajax request because $.put doesn't exist
         $.ajax({
                 method: 'PUT',
                 contentType: 'application/json',
@@ -50,10 +48,12 @@ function TodoService() {
 
     this.removeTodo = () => {
         // Umm this one is on you to write.... It's also unique, like the ajax call above. The method is a DELETE
-        $.delete(baseURL, todo)
-            .then(res => {
-                draw(res)
+        $.ajax({
+                method: 'DELETE',
+                url: baseURl + '/' + todo,
+                data: JSON.stringify(index)
             })
+            .then(getTodos)
             .fail(logError)
     }
 
