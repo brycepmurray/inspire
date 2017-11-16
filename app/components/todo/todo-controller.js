@@ -23,7 +23,7 @@ function TodoController() {
         for (var i = 0; i < todos.length; i++) {
             var myTodo = todos[i]
             template += `
-			<div class="checkbox" onclick="app.controllers.todoController.toggleTodoStatus()">
+			<div class="checkbox" onclick="app.controllers.todoController.removeTodo(${i})">
 			<label><input type="checkbox" value="">${myTodo.description}</label>
 			</div>`
         }
@@ -57,9 +57,9 @@ function TodoController() {
             // YEP THATS IT FOR ME
     }
 
-    this.removeTodo = todo => {
+    this.removeTodo = todoIndex => {
         // ask the service to run the remove todo with this id
-        todoService.removeTodo(todo, getTodos)
+        todoService.removeTodo(todoIndex, getTodos)
             // ^^^^ THIS LINE OF CODE PROBABLY LOOKS VERY SIMILAR TO THE toggleTodoStatus
     }
 
