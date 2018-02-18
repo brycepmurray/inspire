@@ -6,7 +6,11 @@ body {
 
 .weather {
     display: flex;
-    justify-content: right;
+    background: rgba(173, 216, 230, 0.267);
+}
+
+.todos {
+    display: flex;
 }
 
 .row {
@@ -19,5 +23,9 @@ body {
 }
 
 .form {
+    justify-content: space-between;
+}
+
+.top {
     justify-content: space-between;
 }

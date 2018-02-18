@@ -8,9 +8,22 @@
 
 <body id="body">
     <div class="container">
-        <div class="row">
-            <div class="col-sm-6">
+        <div class="row top">
+            <div class="col-sm-3">
                 <div id="weather">
+
+                </div>
+            </div>
+            <div class="col-sm-3">
+                <div id="todos">
+                    <form id="todoForm" class="form hidden" onsubmit="app.controllers.todoController.addTodoFromForm(event)">
+                        <div class="form-group">
+                            <label for="toDo">To Do:</label>
+                            <input type="text" name="todo" class="form-control" placeholder="TO DO?" required>
+                        </div>
+                </div>
+
+                <div id="todo">
 
                 </div>
             </div>
@@ -21,17 +34,6 @@
 
                 </div>
             </div>
-        </div>
-        <div class="row">
-            <form id="todoForm" class="form hidden" onsubmit="app.controllers.todoController.addTodoFromForm(event)">
-                <div class="form-group">
-                    <label for="toDo">To Do:</label>
-                    <input type="text" name="todo" class="form-control" placeholder="TO DO?" required>
-                </div>
-
-                <div id="todo">
-
-                </div>
         </div>
     </div>
 
